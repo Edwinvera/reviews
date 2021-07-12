@@ -69,4 +69,15 @@ nextBtn.addEventListener("click", function () {
     currentItem = 0;
   }
   showPerson(currentItem);
-})
+});
+
+//Dislay previous person
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+});
+
+//Display random person
