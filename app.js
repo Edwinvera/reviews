@@ -48,10 +48,12 @@ const randomBtn = document.querySelector(".random-btn");
 
 let currentItem = 0;
 
+//Displays default person
 window.addEventListener("DOMContentLoaded", function () {
-  showPerson(currentItem)
+  showPerson(currentItem);
 });
 
+//Display person
 const showPerson = (person) => {
   const item = reviews[person];
   img.src = item.img;
@@ -59,3 +61,12 @@ const showPerson = (person) => {
   job.textContent = item.job;
   info.textContent = item.text;
 }
+
+//Display next person
+nextBtn.addEventListener("click", function () {
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
+  }
+  showPerson(currentItem);
+})
